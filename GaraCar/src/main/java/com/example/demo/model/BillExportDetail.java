@@ -23,10 +23,4 @@ public class BillExportDetail {
 	@JoinColumn
 	private Accessory accessory;
 	private int count;
-
-	public void getByExportBill() {
-		// TODO - implement BillExportDetail.getByExportBill
-		throw new UnsupportedOperationException();
-	}
-
 }

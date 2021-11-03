@@ -26,10 +26,4 @@ public class BillExport {
 	private Date date_created;
 	private Long total_money;
 	private String note;
-
-	public void getIdBillTechnicalEmployee() {
-		// TODO - implement BillExport.getIdBillTechnicalEmployee
-		throw new UnsupportedOperationException();
-	}
-
 }

@@ -23,20 +23,4 @@ public class SalaryMonth {
 	private Long hard_salary;
 	private String status;
 	private String note;
-
-	public void getSalaryMonth() {
-		// TODO - implement SalaryMonth.getSalaryMonth
-		throw new UnsupportedOperationException();
-	}
-
-	public void updateStatus() {
-		// TODO - implement SalaryMonth.updateStatus
-		throw new UnsupportedOperationException();
-	}
-
-	public void saveSalary() {
-		// TODO - implement SalaryMonth.saveSalary
-		throw new UnsupportedOperationException();
-	}
-
 }

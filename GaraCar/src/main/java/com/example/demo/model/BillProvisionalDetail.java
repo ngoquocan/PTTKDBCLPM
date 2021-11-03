@@ -24,9 +24,4 @@ public class BillProvisionalDetail {
 	private Service service;
 	private int count;
 
-	public void getByBillId() {
-		// TODO - implement BillProvisionalDetail.getByBillId
-		throw new UnsupportedOperationException();
-	}
-
 }

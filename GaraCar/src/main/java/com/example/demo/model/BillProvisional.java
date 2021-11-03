@@ -35,9 +35,4 @@ public class BillProvisional {
 	@JoinColumn
 	private Slot slot;
 
-	public void getIdBillByTechEm() {
-		// TODO - implement BillProvisional.getIdBillByTechEm
-		throw new UnsupportedOperationException();
-	}
-
 }

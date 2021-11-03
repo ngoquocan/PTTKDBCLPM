@@ -2,21 +2,14 @@ package com.example.demo.model;
 
 import javax.persistence.Entity;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = false)
 @Entity
+@Data
 public class Employee extends User {	
 	private String position;
-
-	public void getAllEmployee() {
-		// TODO - implement Employee.getAllEmployee
-		throw new UnsupportedOperationException();
-	}
-
-	public void getEmployee() {
-		// TODO - implement Employee.getEmployee
-		throw new UnsupportedOperationException();
-	}
-
+	
+	private Long salary_hard;
 }

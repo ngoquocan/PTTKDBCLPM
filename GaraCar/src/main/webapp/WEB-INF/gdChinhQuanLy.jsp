@@ -13,6 +13,5 @@
    <body>
       <h3>Welcome, <%out.print(user.getUsername());%></h3>
       <a href="quanlybangluong">Quản Lý Bảng Lương</a>
-   </body>
-  
+   </body>  
 </html>

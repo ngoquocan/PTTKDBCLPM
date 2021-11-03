@@ -25,9 +25,4 @@ public class SalaryDetail {
 	private int discount;
 	private Long commission;
 
-	public void setSalaryDeital() {
-		// TODO - implement SalaryDetail.setSalaryDeital
-		throw new UnsupportedOperationException();
-	}
-
 }

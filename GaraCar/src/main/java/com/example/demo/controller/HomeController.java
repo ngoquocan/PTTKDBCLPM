@@ -22,14 +22,11 @@ import com.example.demo.repository.SalaryMonthRepository;
 import com.example.demo.repository.UserRepository;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping()
 public class HomeController {
 	@Autowired
 	private UserRepository userRepository;
-	
-	@Autowired
-	private SalaryMonthRepository salaryMonthRepository;
-	
+		
 	@GetMapping(value = {"/","login"})
 	public String login(Model model) {		
 		return "login";
@@ -56,19 +53,5 @@ public class HomeController {
 		user.setUsername(username);
 		session.setAttribute("USER", user);
 		return "gdChinhQuanLy";
-	}
-	@GetMapping("/quanlybangluong")
-	public String qlbangluong() {
-		//lấy tháng hiện tại
-		Calendar time = Calendar.getInstance();
-		int month = time.get(Calendar.MONTH);
-		//lấy danh sách lương nhân niên theo tháng.
-		List<SalaryMonth> listSalaryMonth = salaryMonthRepository.findByMonth(month);
-		
-		//chưa có thì tạo mới.
-		if(listSalaryMonth == null) {
-			listSalaryMonth = new ArrayList<>();
-		}
-		return "gdQuanLyBangLuong";
 	}
 }
