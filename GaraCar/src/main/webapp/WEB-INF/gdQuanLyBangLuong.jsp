@@ -1,21 +1,28 @@
 <!DOCTYPE HTML>
+<%@page import="com.example.demo.model.SalaryMonth"%>
+<%@page import="java.util.List"%>
 <%@page import="com.example.demo.model.User"%>
-<%@ page import="java.util.List, java.text.*" %>
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 
 <head>
-	<meta charset="UTF-8" />
-	<title>Quản Lý Bảng Lương</title>
+<meta charset="UTF-8" />
+<title>Quản Lý Bảng Lương</title>
 </head>
 <%
-      User user = (User) session.getAttribute("USER"); 
-      List<SalaryMonth> listSalary = (ArrayList<SalaryMonth>) request.getAttribute("listSalary");
+    User user = (User) session.getAttribute("USER"); 
+	if(user == null){
+		response.sendRedirect("login");
+	}
    %>
 
 <body>
-	<h3>Welcome, <%out.print(user.getUsername());%></h3>
-	<h2>Danh sách lương nhân viên tháng 11<h2>
+	<h3>
+		Welcome,
+		<%out.print(user.getUsername());%>
+	</h3>
+	<h2>Danh sách lương nhân viên tháng ${thang}</h2>
 			<table>
 				<tr>
 					<th>TT</th>
@@ -24,15 +31,25 @@
 					<th>Tổng tiền</th>
 					<th>Trạng thái</th>
 				</tr>
-				<% for(int i = 0;i<listSalary.size();i++){%>
+				<c:forEach items="${listSalary }" var="salary" varStatus="loop">
 				<tr>
-					<th><%i+1;%></th>
-					<th><%listSalaryMonth.get(i).getEmployee().getFullname();%></th>
-					<th><%listSalaryMonth.get(i).getEmployee().getPosition();%></th>
-					<th><%listSalaryMonth.get(i).getTotal_money();%></th>
-					<th><%listSalaryMonth.get(i).getStatus();%></th>
+					<td>
+						${loop.index + 1}
+					</td>
+					<td>
+						${salary.employee.fullname }
+					</td>
+					<td>
+						${salary.employee.position }
+					</td>
+					<td>
+						${salary.total_money }
+					</td>
+					<td>
+						<a href="/chitietluong/${salary.id }">${salary.status }</a>
+					</td>
 				</tr>
-				<%}%>
-      </table>
-   </body>  
+				</c:forEach>
+			</table>
+</body>
 </html>

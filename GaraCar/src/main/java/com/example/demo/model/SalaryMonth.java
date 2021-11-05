@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.time.Month;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +20,7 @@ public class SalaryMonth {
 	@ManyToOne
 	@JoinColumn
 	private Employee employee;
-	private int month;
+	private String month;
 	private Long total_money;
 	private Long hard_salary;
 	private String status;
